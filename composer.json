@@ -25,6 +25,10 @@
             "php-http/discovery": true
         }
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter"
+    },
     "extra": {
         "laravel": {
             "providers": [
