@@ -1,0 +1,22 @@
+{
+    "name": "muscobytes/laravel-takeads-api-client",
+    "type": "library",
+    "require": {
+        "muscobytes/takeads-api-client": "dev-master",
+        "php-http/discovery": "1.x-dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "11.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Muscobytes\\Laravel\\TakeadsApi\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
