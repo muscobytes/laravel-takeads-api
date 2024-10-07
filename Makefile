@@ -1,7 +1,7 @@
 #!/usr/bin/env make
 # SHELL = sh -xv
 
-TAG := muscobytes/php-cli-8.3
+TAG := muscobytes/laravel-takeads-api/php-cli-8.3
 
 .PHONY: help
 help:  ## Shows this help message
