@@ -19,5 +19,12 @@
         "allow-plugins": {
             "php-http/discovery": true
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Muscobytes\\Laravel\\TakeadsApi\\ClientServiceProvider"
+            ]
+        }
     }
 }
