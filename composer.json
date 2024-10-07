@@ -29,7 +29,10 @@
         "laravel": {
             "providers": [
                 "Muscobytes\\Laravel\\TakeadsApi\\ClientServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "TakeadsApi": "Muscobytes\\Laravel\\TakeadsApi\\Facades\\TakeadsApi"
+            }
         }
     }
 }
