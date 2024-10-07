@@ -14,6 +14,11 @@
             "Muscobytes\\Laravel\\TakeadsApi\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Muscobytes\\Laravel\\TakeadsApi\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "dev",
     "config": {
         "allow-plugins": {
