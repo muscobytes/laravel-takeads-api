@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "type": "library",
     "require": {
-        "muscobytes/takeads-api-client": "dev-master",
+        "muscobytes/takeads-api-client": "^1.0",
         "php-http/discovery": "1.x-dev"
     },
     "require-dev": {

@@ -4,23 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0558509efdf2db218c00310d7a863906",
+    "content-hash": "412d24eb6718525a6dffa31afad7ad97",
     "packages": [
         {
             "name": "muscobytes/takeads-api-client",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/muscobytes/takeads-api-client.git",
-                "reference": "d53b70b334d89a2aa999d900faf50cc36b611899"
+                "reference": "3da3fd2a8e372ac65a0e97f7dfdc7bb85c3a58e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/muscobytes/takeads-api-client/zipball/d53b70b334d89a2aa999d900faf50cc36b611899",
-                "reference": "d53b70b334d89a2aa999d900faf50cc36b611899",
+                "url": "https://api.github.com/repos/muscobytes/takeads-api-client/zipball/3da3fd2a8e372ac65a0e97f7dfdc7bb85c3a58e7",
+                "reference": "3da3fd2a8e372ac65a0e97f7dfdc7bb85c3a58e7",
                 "shasum": ""
             },
             "require": {
+                "php": ">=8.3",
                 "psr/http-client": "^1.0@dev",
                 "psr/http-client-implementation": "*",
                 "psr/http-factory": "^1.1",
@@ -31,7 +32,6 @@
                 "php-http/mock-client": "1.x-dev",
                 "phpunit/phpunit": "^11.4@dev"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -41,9 +41,9 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/muscobytes/takeads-api-client/issues",
-                "source": "https://github.com/muscobytes/takeads-api-client/tree/master"
+                "source": "https://github.com/muscobytes/takeads-api-client/tree/v1.0.0"
             },
-            "time": "2024-10-03T14:49:52+00:00"
+            "time": "2024-10-08T10:53:34+00:00"
         },
         {
             "name": "php-http/discovery",
@@ -9219,7 +9219,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "muscobytes/takeads-api-client": 20,
         "php-http/discovery": 20,
         "phpunit/phpunit": 20
     },
