@@ -15,3 +15,7 @@ build:
 .PHONY: shell
 shell:
 	docker run -ti -v "$(shell pwd):/var/www/html" $(TAG) sh
+
+.PHONY: test
+test:
+	docker run -ti -v "$(shell pwd):/var/www/html" $(TAG) vendor/bin/phpunit
