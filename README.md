@@ -1,6 +1,6 @@
 # Takeads API client for Laravel
 
-This package introduces a wrapper for the [Takeads API Client](https://github.com/muscobytes/takeads-api-client).
+This package for Laravel introduces a wrapper for the [Takeads API Client](https://github.com/muscobytes/takeads-api-client).
 
 ## Prerequisites
 
