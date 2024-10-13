@@ -4,7 +4,7 @@ return [
     /**
      * Setting provider class — Required. Source of the public keys for Takeads API client.
      */
-    'settings_provider' => \Muscobytes\Laravel\TakeadsApi\Settings\ConfigSettings::class,
+    'settings_provider' => Muscobytes\Laravel\TakeadsApi\Settings\ConfigSettings::class,
 
     /**
      * Takeads platform and account keys
