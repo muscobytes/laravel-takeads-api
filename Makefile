@@ -1,7 +1,8 @@
 #!/usr/bin/env make
 # SHELL = sh -xv
 
-TAG := muscobytes/laravel-takeads-api/php-cli-8.3
+PHP_VERSION = 8.2
+TAG := muscobytes/laravel-takeads-api/php-cli-$(PHP_VERSION)
 
 .PHONY: help
 help:  ## Shows this help message
@@ -10,7 +11,10 @@ help:  ## Shows this help message
 
 .PHONY: build
 build:
-	docker build -f "$(shell pwd)/Dockerfile" -t $(TAG) .
+	docker build \
+		--file "$(shell pwd)/.docker/php/$(PHP_VERSION)/Dockerfile" \
+		--tag $(TAG) \
+		.
 
 .PHONY: shell
 shell:
