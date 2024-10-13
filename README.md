@@ -12,6 +12,10 @@ This package for Laravel introduces a wrapper for the [Takeads API Client](https
 ```shell
 composer install muscobytes/laravel-takeads-api
 ```
+- Publish config:
+```shell
+php artisan vendor:publish --provider="Muscobytes\Laravel\TakeadsApi\TakeadsApiServiceProvider" --tag="config"
+```
 
 - Provide keys
 
