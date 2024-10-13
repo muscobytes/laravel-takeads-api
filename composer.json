@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-              "TakeadsApiServiceProvider"
+              "\\Muscobytes\\Laravel\\TakeadsApi\\TakeadsApiServiceProvider"
             ],
             "aliases": {
                 "TakeadsApi": "Muscobytes\\Laravel\\TakeadsApi\\Facades\\TakeadsApi"
