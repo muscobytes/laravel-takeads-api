@@ -3,8 +3,7 @@
     "version": "1.0.0",
     "type": "library",
     "require": {
-        "muscobytes/takeads-api-client": "^1.0",
-        "php-http/discovery": "1.x-dev"
+        "muscobytes/takeads-api-client": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "11.4.x-dev",
@@ -22,9 +21,6 @@
     },
     "minimum-stability": "dev",
     "config": {
-        "allow-plugins": {
-            "php-http/discovery": true
-        }
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
