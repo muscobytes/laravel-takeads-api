@@ -23,3 +23,11 @@ shell:
 .PHONY: test
 test:
 	docker run -ti -v "$(shell pwd):/var/www/html" $(TAG) vendor/bin/phpunit
+
+.PHONY: tag
+tag:
+	git tag v$(shell cat ./composer.json | jq -r .version)
+
+.PHONY: untag
+untag:
+	git tag -d v$(shell cat ./composer.json | jq -r .version)
