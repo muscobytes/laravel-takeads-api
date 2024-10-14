@@ -6,16 +6,22 @@ use Muscobytes\Laravel\TakeadsApi\Interfaces\SettingsInterface;
 use Muscobytes\TakeadsApi\Client;
 use Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click\ClickRequest;
 use Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click\ClickRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click\ClickResponse;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons\CouponsRequest;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons\CouponsRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\Coupons\CouponsResponse;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch\CouponSearchRequest;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch\CouponSearchRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V1\CouponSearch\CouponSearchResponse;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant\MerchantRequest;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant\MerchantRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Merchant\MerchantResponse;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequest;
 use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V1\Monetize\V2\Resolve\ResolveResponse;
 use Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action\ActionRequest;
 use Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action\ActionRequestParameters;
+use Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action\ActionResponse;
 use Muscobytes\TakeadsApi\Exceptions\ClientErrorException;
 use Muscobytes\TakeadsApi\Exceptions\ServerErrorException;
 use Muscobytes\TakeadsApi\Exceptions\ServiceUnavailableException;
@@ -62,5 +68,137 @@ readonly class TakeadsApi
                 $parameters
             )
         );
+    }
+
+
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     */
+    public function resolve(
+        string $public_key_id,
+        ResolveRequestParameters $parameters
+    ): ResolveResponse
+    {
+        /** @var ResolveResponse $response */
+        $response = $this->client->call(
+            new ResolveRequest(
+                $public_key_id,
+                $parameters
+            )
+        );
+        return $response;
+    }
+
+
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     */
+    public function merchant(
+        string $public_key_id,
+        MerchantRequestParameters $parameters
+    ): MerchantResponse
+    {
+        /** @var MerchantResponse $response */
+        $response = $this->client->call(
+            new MerchantRequest(
+                $public_key_id,
+                $parameters
+            )
+        );
+        return $response;
+    }
+
+
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     */
+    public function couponSearch(
+        string $public_key_id,
+        CouponSearchRequestParameters $parameters
+    ): CouponSearchResponse
+    {
+        /** @var CouponSearchResponse $response */
+        $response = $this->client->call(
+            new CouponSearchRequest(
+                $public_key_id,
+                $parameters
+            )
+        );
+        return $response;
+    }
+
+
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     */
+    public function coupons(
+        string $public_key_id,
+        CouponsRequestParameters $parameters
+    ): CouponsResponse
+    {
+        /** @var CouponsResponse $response */
+        $response = $this->client->call(
+            new CouponsRequest(
+                $public_key_id,
+                $parameters
+            )
+        );
+        return $response;
+    }
+
+
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     */
+    public function clickReport(
+        string $public_key_id,
+        ClickRequestParameters $parameters
+    ): ClickResponse
+    {
+        /** @var ClickResponse $response */
+        $response = $this->client->call(
+            new ClickRequest(
+                $public_key_id,
+                $parameters
+            )
+        );
+        return $response;
+    }
+
+
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     */
+    public function actionReport(
+        string $public_key_id,
+        ActionRequestParameters $parameters
+    ): ActionResponse
+    {
+        /** @var ActionResponse $response */
+        $response = $this->client->call(
+            new ActionRequest(
+                $public_key_id,
+                $parameters
+            )
+        );
+        return $response;
     }
 }
