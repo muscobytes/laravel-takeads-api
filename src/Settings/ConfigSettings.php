@@ -38,7 +38,7 @@ class ConfigSettings implements SettingsInterface
     {
         return $this->findById(
             $id,
-            config('takeads.keys')
+            config('takeads.credentials')
         );
     }
 }
