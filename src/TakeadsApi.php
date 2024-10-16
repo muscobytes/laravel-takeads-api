@@ -82,14 +82,8 @@ readonly class TakeadsApi
         ResolveRequestParameters $parameters
     ): ResolveResponse
     {
-        /** @var ResolveResponse $response */
-        $response = $this->client->call(
-            new ResolveRequest(
-                $public_key_id,
-                $parameters
-            )
-        );
-        return $response;
+        /** @var ResolveResponse */
+        return $this->call($public_key_id, $parameters);
     }
 
 
@@ -104,14 +98,8 @@ readonly class TakeadsApi
         MerchantRequestParameters $parameters
     ): MerchantResponse
     {
-        /** @var MerchantResponse $response */
-        $response = $this->client->call(
-            new MerchantRequest(
-                $public_key_id,
-                $parameters
-            )
-        );
-        return $response;
+        /** @var MerchantResponse */
+        return $this->call($public_key_id, $parameters);
     }
 
 
@@ -126,14 +114,8 @@ readonly class TakeadsApi
         CouponSearchRequestParameters $parameters
     ): CouponSearchResponse
     {
-        /** @var CouponSearchResponse $response */
-        $response = $this->client->call(
-            new CouponSearchRequest(
-                $public_key_id,
-                $parameters
-            )
-        );
-        return $response;
+        /** @var CouponSearchResponse */
+        return $this->call($public_key_id, $parameters);
     }
 
 
@@ -148,14 +130,8 @@ readonly class TakeadsApi
         CouponsRequestParameters $parameters
     ): CouponsResponse
     {
-        /** @var CouponsResponse $response */
-        $response = $this->client->call(
-            new CouponsRequest(
-                $public_key_id,
-                $parameters
-            )
-        );
-        return $response;
+        /** @var CouponsResponse */
+        return $this->call($public_key_id, $parameters);
     }
 
 
@@ -170,14 +146,8 @@ readonly class TakeadsApi
         ClickRequestParameters $parameters
     ): ClickResponse
     {
-        /** @var ClickResponse $response */
-        $response = $this->client->call(
-            new ClickRequest(
-                $public_key_id,
-                $parameters
-            )
-        );
-        return $response;
+        /** @var ClickResponse */
+        return $this->call($public_key_id, $parameters);
     }
 
 
@@ -192,13 +162,7 @@ readonly class TakeadsApi
         ActionRequestParameters $parameters
     ): ActionResponse
     {
-        /** @var ActionResponse $response */
-        $response = $this->client->call(
-            new ActionRequest(
-                $public_key_id,
-                $parameters
-            )
-        );
-        return $response;
+        /** @var ActionResponse */
+        return $this->call($public_key_id, $parameters);
     }
 }
