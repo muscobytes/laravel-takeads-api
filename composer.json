@@ -32,7 +32,7 @@
               "\\Muscobytes\\Laravel\\TakeadsApi\\TakeadsApiServiceProvider"
             ],
             "aliases": {
-                "TakeadsApi": "Muscobytes\\Laravel\\TakeadsApi\\Facades\\TakeadsApi"
+                "TakeadsApi": "Muscobytes\\Laravel\\TakeadsApi\\Facades\\TakeadsApiFacade"
             }
         }
     }
