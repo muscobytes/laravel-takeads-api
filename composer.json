@@ -1,6 +1,6 @@
 {
     "name": "muscobytes/laravel-takeads-api-client",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "library",
     "require": {
         "muscobytes/takeads-api-client": "^1.0"
