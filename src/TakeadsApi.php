@@ -98,11 +98,11 @@ readonly class TakeadsApi
      */
     public function iterateWithMetaNext(
         string $public_key_id,
-        MerchantRequestParameters $parameters
+        MerchantRequestParameters|CouponsRequestParameters|ActionRequestParameters $parameters
     ): Generator
     {
         do {
-            /** @var MerchantResponse $response */
+            /** @var MerchantResponse|CouponsResponse|ActionResponse $response */
             $response = $this->call($public_key_id, $parameters);
             $parameters->next = $response->getMeta()->next;
             yield $response;
@@ -147,14 +147,14 @@ readonly class TakeadsApi
      * @throws UnknownErrorException
      * @throws ServerErrorException
      * @throws ServiceUnavailableException
+     * @throws ResponseMetaIsMissingException
      */
     public function coupons(
         string $public_key_id,
         CouponsRequestParameters $parameters
-    ): CouponsResponse
+    ): Generator
     {
-        /** @var CouponsResponse */
-        return $this->call($public_key_id, $parameters);
+        return $this->iterateWithMetaNext($public_key_id, $parameters);
     }
 
 
@@ -179,13 +179,13 @@ readonly class TakeadsApi
      * @throws UnknownErrorException
      * @throws ServerErrorException
      * @throws ServiceUnavailableException
+     * @throws ResponseMetaIsMissingException
      */
     public function actionReport(
         string $public_key_id,
         ActionRequestParameters $parameters
-    ): ActionResponse
+    ): Generator
     {
-        /** @var ActionResponse */
-        return $this->call($public_key_id, $parameters);
+        return $this->iterateWithMetaNext($public_key_id, $parameters);
     }
 }
