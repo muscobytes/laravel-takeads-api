@@ -2,6 +2,7 @@
 
 namespace Muscobytes\Laravel\TakeadsApi;
 
+use Generator;
 use Muscobytes\Laravel\TakeadsApi\Interfaces\SettingsInterface;
 use Muscobytes\TakeadsApi\Client;
 use Muscobytes\TakeadsApi\Dto\V1\Api\Stats\Click\ClickRequest;
@@ -23,6 +24,7 @@ use Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action\ActionRequest;
 use Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action\ActionRequestParameters;
 use Muscobytes\TakeadsApi\Dto\V3\Api\Stats\Action\ActionResponse;
 use Muscobytes\TakeadsApi\Exceptions\ClientErrorException;
+use Muscobytes\TakeadsApi\Exceptions\ResponseMetaIsMissingException;
 use Muscobytes\TakeadsApi\Exceptions\ServerErrorException;
 use Muscobytes\TakeadsApi\Exceptions\ServiceUnavailableException;
 use Muscobytes\TakeadsApi\Exceptions\UnknownErrorException;
@@ -88,18 +90,39 @@ readonly class TakeadsApi
 
 
     /**
+     * @throws ResponseMetaIsMissingException
      * @throws ClientErrorException
      * @throws UnknownErrorException
      * @throws ServerErrorException
      * @throws ServiceUnavailableException
      */
+    public function iterateWithMetaNext(
+        string $public_key_id,
+        MerchantRequestParameters $parameters
+    ): Generator
+    {
+        do {
+            /** @var MerchantResponse $response */
+            $response = $this->call($public_key_id, $parameters);
+            $parameters->next = $response->getMeta()->next;
+            yield $response;
+        } while ($parameters->next);
+    }
+
+
+    /**
+     * @throws ClientErrorException
+     * @throws UnknownErrorException
+     * @throws ServerErrorException
+     * @throws ServiceUnavailableException
+     * @throws ResponseMetaIsMissingException
+     */
     public function merchant(
         string $public_key_id,
         MerchantRequestParameters $parameters
-    ): MerchantResponse
+    ): Generator
     {
-        /** @var MerchantResponse */
-        return $this->call($public_key_id, $parameters);
+        return $this->iterateWithMetaNext($public_key_id, $parameters);
     }
 
 
